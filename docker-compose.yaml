@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  tilemill:
+    image: schachmett/tilemill
+    build: ./context
+    ports: 
+      - 20009:20009
+      - 20008:20008
+    volumes:
+      - /home/simon/projects/mapnik/mapbox:/root/Documents/MapBox
+      
+#  postgres-osm:
+#    image: openfirmware/postgres-osm
+#    ports:
+#      - 5432:5432
+
+#  osm2pgsql:
+#    image: openfirmware/osm2pgsql
+#    stdin_open: true
+#    tty: true
+#    command: -c 'osm2pgsql --create --slim --hstore --cache 6000 --number-processes 4 --database $PG_ENV_OSM_DB --username $PG_ENV_OSM_USER --host pg --port $PG_PORT_5432_TCP_PORT /osm/$PBF_FILE'
+#    links:
+#      - postgres-osm:pg
+#    depends_on:
+#      - postgres-osm
+#    volumes:
+#      - /home/simon/projects/mapnik/pbf:/osm
+#    environment:
+#      PBF_FILE: bremen-latest.osm.pbf
