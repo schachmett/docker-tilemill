@@ -23,11 +23,12 @@ RUN cd /root/ && \
 RUN echo "{\"listenHost\":\"0.0.0.0\",\"server\":true}" > /root/.tilemill/config.json && \
     cat /root/.tilemill/config.json && \
     mkdir -p /root/Documents/MapBox
+    
+    # add this to the config manually if running remotely: ,\"coreUrl\":\"x.x.x.x:20009\",\"tileUrl\":\"x.x.x.x:20008\"
 
 WORKDIR /root/tilemill
 
 ENTRYPOINT ["npm", "start"]
 
-EXPOSE 20009
-EXPOSE 20008
+EXPOSE 20008 20009
 
