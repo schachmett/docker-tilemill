@@ -13,6 +13,8 @@ $ cd /path/to/this/git/repo
 $ docker-compose up
 ```
 
+You can use tilemill in your browser under `127.0.0.1:20009`.
+
 Stop the server again with `Ctrl+C`. If you want to keep the server running in the background, use `$ docker-compose up -d`. You can then stop the server only with `$ docker-compose down` from the same directory.
 
 
